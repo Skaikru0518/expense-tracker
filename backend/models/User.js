@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 
-//Creating scheme to store data in mongodb
-export const userScheme = new mongoose.Schema(
+// Creating schema to store user data in MongoDB
+const userSchema = new mongoose.Schema(
 	{
 		fullName: { type: String, required: true },
 		email: { type: String, required: true, unique: true },
@@ -12,18 +12,18 @@ export const userScheme = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-// Hansh password before saving
-userScheme.pre("save", async function (next) {
+// Hash password before saving
+userSchema.pre("save", async function (next) {
 	if (!this.isModified("password")) return next();
 	this.password = await bcrypt.hash(this.password, 10);
 	next();
 });
 
 // Compare passwords
-userScheme.methods.comparePassword = async function (candidatePassword) {
+userSchema.methods.comparePassword = async function (candidatePassword) {
 	return await bcrypt.compare(candidatePassword, this.password);
 };
 
-// Exporting USER MODEL
-const User = (mongoose.model = ("User", userScheme));
+// Exporting User model
+const User = mongoose.model("User", userSchema);
 export default User;
