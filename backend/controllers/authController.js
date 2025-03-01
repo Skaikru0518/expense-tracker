@@ -10,14 +10,14 @@ const generateToken = (id) => {
 export const registerUser = async (req, res) => {
 	const { fullName, email, password, profileImageUrl } = req.body;
 
-	// validation: check for missing fields
+	// Validate required fields
 	if (!fullName || !email || !password) {
 		return res.status(400).json({ message: "All fields are required!" });
 	}
 
 	try {
-		//Check if email already used
-		const existingUser = await User.findOne({ email });
+		// Check if the email is already registered
+		const existingUser = await User.findOne({ email }); // ✅ Use lowercase `findOne`
 		if (existingUser) {
 			return res.status(400).json({ message: "Email already registered!" });
 		}
