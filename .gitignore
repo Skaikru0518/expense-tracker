@@ -15,8 +15,8 @@ dist
 dist-ssr
 *.local
 .env
-!/uploads/.gitkeep
-/uploads/*
+!backend/uploads/.gitkeep
+backend/uploads/*
 
 
 # Editor directories and files
