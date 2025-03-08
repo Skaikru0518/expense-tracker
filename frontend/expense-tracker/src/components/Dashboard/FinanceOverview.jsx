@@ -13,7 +13,7 @@ const FinanceOverview = ({ totalBalance, totalIncome, totalExpense }) => {
     console.log({ balanceData });
 
     return (
-        <div className="card mt-5">
+        <div className="card">
             <div className="flex items-center justify-between">
                 <h5 className="text-lg">Financial Overview</h5>
             </div>
