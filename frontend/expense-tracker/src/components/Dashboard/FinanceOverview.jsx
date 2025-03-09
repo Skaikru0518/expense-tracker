@@ -10,7 +10,7 @@ const FinanceOverview = ({ totalBalance, totalIncome, totalExpense }) => {
         { name: 'Total Income', amount: totalIncome },
     ];
 
-    console.log({ balanceData });
+    // console.log({ balanceData });
 
     return (
         <div className="card">
