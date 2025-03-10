@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../../context/userContext';
+import { UserContext } from '../../context/UserContext';
 import { SIDE_MENU_DATA } from '../../utils/data';
 import CharAvatar from '../Cards/CharAvatar';
 
