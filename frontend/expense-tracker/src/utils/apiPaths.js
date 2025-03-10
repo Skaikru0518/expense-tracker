@@ -1,5 +1,9 @@
-const PORT = import.meta.env.PORT || 5000; //default port is 5000 for backend as well
-export const BASE_URL = `http://localhost:${PORT}`;
+// const PORT = import.meta.env.PORT || 5000; //default port is 5000 for backend as well
+// export const BASE_URL = `http://localhost:${PORT}`;
+
+export const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+console.log('API BASE URL:', BASE_URL);
+
 // utils/apiPaths.js
 export const API_PATHS = {
     AUTH: {
