@@ -1,27 +1,30 @@
 {
-	"name": "expen-se-tracker-backend",
-	"version": "1.0.0",
-	"main": "server.js",
-	"type": "module",
-	"scripts": {
-		"start": "node server.js",
-		"dev": "nodemon server.js"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
-	"dependencies": {
-		"bcryptjs": "^3.0.2",
-		"cors": "^2.8.5",
-		"dotenv": "^16.4.7",
-		"express": "^4.21.2",
-		"jsonwebtoken": "^9.0.2",
-		"mongoose": "^8.11.0",
-		"multer": "^1.4.5-lts.1",
-		"xlsx": "^0.18.5"
-	},
-	"devDependencies": {
-		"nodemon": "^3.1.9"
-	}
+    "name": "expen-se-tracker-backend",
+    "version": "1.0.0",
+    "main": "server.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js",
+        "start_prod": "cross-env NODE_ENV=production node server.js",
+        "build": "npm install && npm install --prefix ../frontend/expense-tracker && npm run build --prefix ../frontend/expense-tracker"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "bcryptjs": "^3.0.2",
+        "cors": "^2.8.5",
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.11.0",
+        "multer": "^1.4.5-lts.1",
+        "xlsx": "^0.18.5"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    }
 }
