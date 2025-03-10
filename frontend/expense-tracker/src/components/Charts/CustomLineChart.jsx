@@ -29,7 +29,7 @@ const customTooltip = ({ active, payload }) => {
 };
 
 const CustomLineChart = ({ data }) => {
-    console.log(data);
+    //console.log(data);
     return (
         <div className="bg-white ">
             <ResponsiveContainer width={'100%'} height={300}>

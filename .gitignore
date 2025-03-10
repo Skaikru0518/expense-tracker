@@ -17,6 +17,7 @@ dist-ssr
 .env
 !backend/uploads/.gitkeep
 backend/uploads/*
+backend/*.xlsx
 
 
 # Editor directories and files

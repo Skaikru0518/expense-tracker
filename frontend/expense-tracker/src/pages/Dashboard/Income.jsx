@@ -63,6 +63,10 @@ const Income = () => {
             return;
         }
 
+        if (!icon) {
+            toast.error('Please choose an icon.');
+        }
+
         try {
             await axiosInstance.post(API_PATHS.INCOME.ADD_INCOME, {
                 source,
@@ -81,7 +85,7 @@ const Income = () => {
         }
     };
 
-    //Delete income
+    // Delete income
     const deleteIncome = async (id) => {
         try {
             await axiosInstance.delete(API_PATHS.INCOME.DELETE_INCOME(id));
@@ -96,8 +100,30 @@ const Income = () => {
         }
     };
 
-    // handle download income details
-    const handleDownloadIncomeDetails = async () => {};
+    // Handle download income details
+    const handleDownloadIncomeDetails = async () => {
+        try {
+            const response = await axiosInstance.get(
+                API_PATHS.INCOME.DOWNLOAD_INCOME,
+                { responseType: 'blob' },
+            );
+
+            // Create URL for the blob file
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'income_details.xlsx');
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+            window.URL.revokeObjectURL(url);
+
+            toast.success('Download success!');
+        } catch (error) {
+            console.log('Error downloading income details:', error);
+            toast.error('Error downloading income details, please try again!');
+        }
+    };
 
     useEffect(() => {
         fetchIncomeDetails();

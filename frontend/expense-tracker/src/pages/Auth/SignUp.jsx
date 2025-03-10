@@ -48,7 +48,9 @@ const SignUp = () => {
                 const imageUploadRes = await uploadImage(profilePic);
                 profileImageUrl = imageUploadRes.imageUrl || '';
             }
-        } catch (error) {}
+        } catch (error) {
+            console.log('Error uploading profile picture:', error);
+        }
 
         try {
             const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER, {
@@ -90,7 +92,7 @@ const SignUp = () => {
                         setImage={setProfilePic}
                     />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                         <Input
                             value={fullName}
                             onChange={({ target }) => setFullName(target.value)}
