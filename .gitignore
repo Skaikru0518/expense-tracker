@@ -18,6 +18,7 @@ dist-ssr
 !backend/uploads/.gitkeep
 backend/uploads/*
 backend/*.xlsx
+/screenshots
 
 
 # Editor directories and files
