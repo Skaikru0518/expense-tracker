@@ -91,7 +91,8 @@ JWT_SECRET=your_jwt_secret
 
 ## 📸 Screenshots
 
-![Dashboard](https://expense-tracker-1rww.onrender.com/screenshot-dashboard.jpg)
+![Dashboard](https://github.com/Skaikru0518/expense-tracker/blob/master/screenshots/dashboard.png)
+![Expense](https://github.com/Skaikru0518/expense-tracker/blob/master/screenshots/expense1.png)
 <!-- Replace or add actual screenshots if available -->
 
 ---
